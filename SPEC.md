@@ -1,6 +1,6 @@
 # Learn Mandarin — Free Open-Source Chinese Learning for ABC Kids
 
-> **Status:** Research phase | Deployed at: learn.ljding.app/mandarin (future)
+> **Status:** Research (Day 2 of 7 — Content & Curriculum) | Deployed at: learn.ljding.app/mandarin (future)
 
 **In our app ecosystem:** learn-some-ai (AI learning) + learn-mandarin (Chinese learning)
 
@@ -53,11 +53,22 @@ Target: ABC kids who speak some Chinese at home but can't read/write fluently, a
 
 ## 4. Technical Stack (TBD)
 
-- **Frontend:** React Native or Flutter (mobile-first, covers iOS/Android)
-- **Backend:** TBD (Supabase? Firebase? Custom?)
-- **Content:** HSK standards + heritage speaker curriculum additions
+- **Frontend:** Vue 3 + Vite + Cloudflare Pages
+- **Backend:** TBD (Supabase? Firebase? Cloudflare Workers + D1?)
+- **Content:** HSK 3.0 vocabulary from GitHub datasets + heritage speaker curriculum additions
 - **Auth:** Parent-managed accounts (COPPA compliance critical for kids)
 - **Payments:** Subscription (monthly/annual)
+
+### Technical Decisions (Research Day 2)
+
+| Decision | Choice | Rationale |
+|----------|--------|-----------|
+| **Stroke animation** | `hanzi-writer` + `hanzi-writer-data` | 10k+ chars, MIT license, Vue compatible |
+| **SRS algorithm** | FSRS.js (WASM) | More accurate than SM-2, JS-native |
+| **HSK vocabulary** | `chngyy/hsk-data` (GitHub) | Clean JSON, HSK 1-6, pinyin + translations |
+| **TTS (v1)** | Web Speech API | Free, browser-native, no API key |
+| **Character set** | Simplified Chinese | ABC kids in US mostly learn Simplified |
+| **Pinyin display** | Toggle mode (show/hide) | Heritage learners vary in need |
 
 ## 5. Business Model
 
@@ -69,17 +80,30 @@ Target: ABC kids who speak some Chinese at home but can't read/write fluently, a
 
 ## 6. Open Questions
 
-1. Mobile-first or web-first? (WeChat mini program distribution?)
-2. Live teacher component or fully self-paced?
-3. How do we source/license Chinese content legally?
-4. COPPA compliance — how to handle under-13 accounts?
-5. What makes us meaningfully different from LingoAce?
-6. How do we handle multiple Chinese dialects/accents?
+1. ~~Mobile-first or web-first?~~ → **Web-first** (Vue 3 + Cloudflare Pages)
+2. Live teacher component or fully self-paced? → **Self-paced** (free, open-source model)
+3. ~~How do we source/license Chinese content legally?~~ → **HSK vocab from GitHub (open), stories/content created in-house or CC-licensed**
+4. COPPA compliance — how to handle under-13 accounts? → Needs legal review
+5. ~~What makes us meaningfully different from LingoAce?~~ → **Free + open-source + heritage-learner-first design**
+6. How do we handle multiple Chinese dialects/accents? → **Mandarin only (for now), tone neutral**
+7. **NEW — Pinyin strategy:** Show Pinyin always vs. hide it once mastered? → Toggle mode recommended
+8. **NEW — Daily lesson structure:** Fixed path vs. adaptive? → Heritage placement test → adaptive
+9. **NEW — Gamification scope v1:** Just streaks/XP or full Duolingo-style hearts/lives?
 
-## 7. Next Steps
+## 7. Research Progress
 
-- [ ] Review full research document
-- [ ] Define target audience and age brackets
-- [ ] Decide on tech stack
-- [ ] Sketch v1 feature scope
-- [ ] Create low-fidelity wireframes
+| Day | Focus | Status |
+|-----|-------|--------|
+| 1 | Competitive Landscape | ✅ Complete |
+| 2 | Content & Curriculum | ✅ Complete (this session) |
+| 3–4 | Technical Architecture | ⏳ Next |
+| 5–6 | Gamification & Engagement | ⏳ Planned |
+| 7 | Open-Source Landscape | ⏳ Planned |
+
+## 8. Next Steps (Revised)
+
+- [ ] Complete technical architecture research (Days 3–4)
+- [ ] Define v1 feature scope (MVP list)
+- [ ] Decide on gamification mechanics (streaks only or full Duolingo-style?)
+- [ ] Create heritage learner placement test questions
+- [ ] Sketch v1 user flows (onboarding → placement → daily learning)
