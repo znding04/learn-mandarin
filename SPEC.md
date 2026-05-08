@@ -51,26 +51,28 @@ Target: ABC kids who speak some Chinese at home but can't read/write fluently, a
 - [ ] User-generated content (kids write stories)
 - [ ] Integration with Chinese school curricula tracking
 
-## 4. Technical Stack (TBD)
+## 4. Technical Stack (Confirmed)
 
-- **Frontend:** Vue 3 + Vite + Cloudflare Pages
-- **Backend:** TBD (Supabase? Firebase? Cloudflare Workers + D1?)
+- **Frontend:** Vue 3 + Vite + Cloudflare Pages (same stack as learn-some-ai)
+- **Backend:** Self-contained (localStorage for v1, Cloudflare KV for user data in v2)
 - **Content:** HSK 3.0 vocabulary from GitHub datasets + heritage speaker curriculum additions
 - **Auth:** Parent-managed accounts (COPPA compliance critical for kids)
-- **Payments:** Subscription (monthly/annual)
+- **Payments:** Subscription (monthly/annual) — defer to v2
 
-### Technical Decisions (Research Day 2)
+### Technical Decisions (Research Days 2-4)
 
 | Decision | Choice | Rationale |
 |----------|--------|-----------|
-| **Stroke animation** | `hanzi-writer` + `hanzi-writer-data` | 10k+ chars, MIT license, Vue compatible |
-| **SRS algorithm** | FSRS.js (WASM) | More accurate than SM-2, JS-native |
-| **HSK vocabulary** | `chngyy/hsk-data` (GitHub) | Clean JSON, HSK 1-6, pinyin + translations |
+| **Stroke animation** | `chanind/hanzi-writer` (⭐4,762) | 10k+ chars, MIT, TypeScript, Vue compatible |
+| **SRS algorithm** | FSRS.js (`open-spaced-repetition`) | More accurate than SM-2, JS/WASM, MIT |
+| **HSK vocabulary** | `drkameleon/complete-hsk-vocabulary` (⭐215) | HSK 2.0/3.0 complete, MIT |
 | **TTS (v1)** | Web Speech API | Free, browser-native, no API key |
 | **Character set** | Simplified Chinese | ABC kids in US mostly learn Simplified |
 | **Pinyin display** | Toggle mode (show/hide) | Heritage learners vary in need |
+| **Data persistence** | localStorage (v1), Cloudflare KV (v2) | Simple start, scalable later |
+| **Font loading** | Google Fonts Noto Sans SC | Free, font-display:swap, ~1-2MB |
 
-## 5. Business Model
+### Open Questions (Updated)
 
 | Tier | Price | Features |
 |------|-------|----------|
@@ -95,15 +97,16 @@ Target: ABC kids who speak some Chinese at home but can't read/write fluently, a
 | Day | Focus | Status |
 |-----|-------|--------|
 | 1 | Competitive Landscape | ✅ Complete |
-| 2 | Content & Curriculum | ✅ Complete (this session) |
-| 3–4 | Technical Architecture | ⏳ Next |
-| 5–6 | Gamification & Engagement | ⏳ Planned |
+| 2 | Content & Curriculum | ✅ Complete |
+| 3–4 | Technical Architecture | ✅ Complete (this session) |
+| 5–6 | Gamification & Engagement | ⏳ Next |
 | 7 | Open-Source Landscape | ⏳ Planned |
 
 ## 8. Next Steps (Revised)
 
-- [ ] Complete technical architecture research (Days 3–4)
+- [ ] Complete gamification & engagement research (Days 5–6)
 - [ ] Define v1 feature scope (MVP list)
 - [ ] Decide on gamification mechanics (streaks only or full Duolingo-style?)
 - [ ] Create heritage learner placement test questions
 - [ ] Sketch v1 user flows (onboarding → placement → daily learning)
+- [ ] **NEW — Technical decisions all resolved** — no hard blockers found
