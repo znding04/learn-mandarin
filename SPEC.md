@@ -1,6 +1,8 @@
 # Learn Mandarin — Free Open-Source Chinese Learning for ABC Kids
 
-> **Status:** Research (Day 2 of 7 — Content & Curriculum) | Deployed at: learn.ljding.app/mandarin (future)
+> **Status:** ✅ READY TO BUILD | Deployed at: learn.ljding.app/mandarin (future)
+>
+> **Build Decision:** All 7 days of research complete. No hard blockers found. Proceed to implementation.
 
 **In our app ecosystem:** learn-some-ai (AI learning) + learn-mandarin (Chinese learning)
 
@@ -72,41 +74,81 @@ Target: ABC kids who speak some Chinese at home but can't read/write fluently, a
 | **Data persistence** | localStorage (v1), Cloudflare KV (v2) | Simple start, scalable later |
 | **Font loading** | Google Fonts Noto Sans SC | Free, font-display:swap, ~1-2MB |
 
-### Open Questions (Updated)
-
-| Tier | Price | Features |
-|------|-------|----------|
-| Free | $0 | Limited lessons, ads, basic tracking |
-| Premium | ~$10–15/mo | Full curriculum, no ads, progress reports |
-| Family | ~$20/mo | 2–3 kids, parent dashboard |
-
-## 6. Open Questions
+## 6. Open Questions (RESOLVED)
 
 1. ~~Mobile-first or web-first?~~ → **Web-first** (Vue 3 + Cloudflare Pages)
 2. Live teacher component or fully self-paced? → **Self-paced** (free, open-source model)
-3. ~~How do we source/license Chinese content legally?~~ → **HSK vocab from GitHub (open), stories/content created in-house or CC-licensed**
-4. COPPA compliance — how to handle under-13 accounts? → Needs legal review
+3. ~~How do we source/license Chinese content legally?~~ → **HSK vocab from GitHub (MIT), stories created in-house (CC-licensed)**
+4. COPPA compliance — how to handle under-13 accounts? → Parent email verification + no personal data collection beyond name/age
 5. ~~What makes us meaningfully different from LingoAce?~~ → **Free + open-source + heritage-learner-first design**
-6. How do we handle multiple Chinese dialects/accents? → **Mandarin only (for now), tone neutral**
-7. **NEW — Pinyin strategy:** Show Pinyin always vs. hide it once mastered? → Toggle mode recommended
-8. **NEW — Daily lesson structure:** Fixed path vs. adaptive? → Heritage placement test → adaptive
-9. **NEW — Gamification scope v1:** Just streaks/XP or full Duolingo-style hearts/lives?
+6. How do we handle multiple Chinese dialects/accents? → **Mandarin only (for now), PRC standard for tones**
+7. ~~Pinyin strategy~~ → **Toggle mode (show/hide)** — heritage learners vary in need
+8. ~~Daily lesson structure~~ → **Heritage placement test → adaptive path**
+9. ~~Gamification scope v1~~ → **Streaks + XP + levels + badges. NO lives/hearts** (too punishing for Chinese)
+10. **NEW — Hearts/lives for Chinese?** → **NO.** Chinese characters are harder than European vocabulary. Duolingo-style lives cause frustration and churn. Use streak-freeze earned via achievements instead.
+
+## 6b. v1 Feature List (Final)
+
+### MVP (Must Have)
+- [ ] Heritage placement test (20 Q, adaptive, places into HSK level or bypasses to W3+)
+- [ ] User profiles (name, age, avatar, parent-managed settings)
+- [ ] Daily lesson path (5–10 min, HSK-aligned or heritage path)
+- [ ] Vocabulary SRS deck (FSRS.js, 15 new cards/day, 100 reviews/day max)
+- [ ] Character writing practice (hanzi-writer, stroke animation + quiz)
+- [ ] Tone drill mini-game (tone identification, 4 difficulty levels)
+- [ ] XP system (+5/correct, +20 perfect lesson, +50 daily goal)
+- [ ] Streak tracking with earned freeze items
+- [ ] Level progression (6 HSK-aligned worlds, unlocking)
+- [ ] Achievement badges (learning + streak + heritage milestones)
+- [ ] Parent dashboard (child progress, XP, streak in English)
+- [ ] Pinyin toggle (show/hide on all content)
+- [ ] LocalStorage persistence (v1 only)
+
+### Should Have (v1.1)
+- [ ] Short dialogue/listening exercises (audio + text + Q)
+- [ ] Cultural stories with vocabulary highlight
+- [ ] Friend leaderboard (within friend group only)
 
 ## 7. Research Progress
 
-| Day | Focus | Status |
+|| Day | Focus | Status |
 |-----|-------|--------|
 | 1 | Competitive Landscape | ✅ Complete |
 | 2 | Content & Curriculum | ✅ Complete |
-| 3–4 | Technical Architecture | ✅ Complete (this session) |
-| 5–6 | Gamification & Engagement | ⏳ Next |
-| 7 | Open-Source Landscape | ⏳ Planned |
+| 3–4 | Technical Architecture | ✅ Complete |
+| 5–6 | Gamification & Engagement | ✅ Complete |
+| 7 | Open-Source Landscape | ✅ Complete |
+
+## 7b. Gamification Decisions (Final)
+
+### XP System
+- Correct answer: +5 XP | Perfect lesson bonus: +20 XP | Daily goal met: +50 XP
+- 7-day streak burst: +50 XP | 30-day streak: +150 XP
+- Daily targets: 50–75 XP (ages 5–7), 100–150 XP (ages 8–10), 150–200 XP (ages 11–14)
+
+### Streaks
+- **NO lives/hearts system** — too punishing for Chinese (harder than European languages)
+- Streak freeze earned via achievements (not purchasable in free app)
+- Streak repair available within 4 hours of break
+
+### Heritage Learner UX
+- Placement test bypasses HSK 1–2 content (ABC kids already know basic vocabulary)
+- Pinyin toggle always available
+- Age-appropriate tone instruction (not condescending)
+- Parent dashboard in English
 
 ## 8. Next Steps (Revised)
 
-- [ ] Complete gamification & engagement research (Days 5–6)
-- [ ] Define v1 feature scope (MVP list)
-- [ ] Decide on gamification mechanics (streaks only or full Duolingo-style?)
-- [ ] Create heritage learner placement test questions
-- [ ] Sketch v1 user flows (onboarding → placement → daily learning)
-- [ ] **NEW — Technical decisions all resolved** — no hard blockers found
+- [x] Complete gamification & engagement research (Days 5–6)
+- [x] Complete open-source landscape research (Day 7)
+- [x] Resolve gamification mechanics (streaks, XP, lives/hearts decision)
+- [ ] **CREATE SKELETON PROJECT** — `npm create vue@latest`, install dependencies
+- [ ] Set up Cloudflare Pages project (following learn-some-ai pattern)
+- [ ] Implement heritage placement test (20 questions)
+- [ ] Build core lesson flow (placement → lesson card → review)
+- [ ] Integrate hanzi-writer for stroke practice
+- [ ] Integrate FSRS.js for vocabulary SRS
+- [ ] Build XP/streak/achievement system
+- [ ] Build parent dashboard
+- [ ] Deploy to Cloudflare Pages
+- [ ] **OPEN BETA** — invite first 10 families
