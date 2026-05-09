@@ -111,7 +111,7 @@ Target: ABC kids who speak some Chinese at home but can't read/write fluently, a
 
 ## 7. Research Progress
 
-|| Day | Focus | Status |
+| Day | Focus | Status |
 |-----|-------|--------|
 | 1 | Competitive Landscape | ✅ Complete |
 | 2 | Content & Curriculum | ✅ Complete |
