@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "chinese": "你",
+    "pinyin": "nǐ",
+    "english": "you",
+    "hskLevel": 1,
+    "lessonId": 1
+  },
+  {
+    "id": 2,
+    "chinese": "好",
+    "pinyin": "hǎo",
+    "english": "good",
+    "hskLevel": 1,
+    "lessonId": 1
+  },
+  {
+    "id": 3,
+    "chinese": "是",
+    "pinyin": "shì",
+    "english": "to be",
+    "hskLevel": 1,
+    "lessonId": 1
+  },
+  {
+    "id": 4,
+    "chinese": "我",
+    "pinyin": "wǒ",
+    "english": "I / me",
+    "hskLevel": 1,
+    "lessonId": 1
+  },
+  {
+    "id": 5,
+    "chinese": "他",
+    "pinyin": "tā",
+    "english": "he / him",
+    "hskLevel": 1,
+    "lessonId": 1
+  },
+  {
+    "id": 6,
+    "chinese": "她",
+    "pinyin": "tā",
+    "english": "she / her",
+    "hskLevel": 1,
+    "lessonId": 1
+  },
+  {
+    "id": 7,
+    "chinese": "这",
+    "pinyin": "zhè",
+    "english": "this",
+    "hskLevel": 1,
+    "lessonId": 1
+  },
+  {
+    "id": 8,
+    "chinese": "那",
+    "pinyin": "nà",
+    "english": "that",
+    "hskLevel": 1,
+    "lessonId": 1
+  },
+  {
+    "id": 9,
+    "chinese": "什么",
+    "pinyin": "shénme",
+    "english": "what",
+    "hskLevel": 1,
+    "lessonId": 1
+  },
+  {
+    "id": 10,
+    "chinese": "谁",
+    "pinyin": "shuí",
+    "english": "who",
+    "hskLevel": 1,
+    "lessonId": 1
+  }
+]

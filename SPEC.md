@@ -4,6 +4,10 @@
 >
 > **Build Decision:** All 7 days of research complete. No hard blockers found. Proceed to implementation.
 
+## Build Progress
+
+- **Phase 1 Complete (2026-05-10):** Vue 3 + Vite project setup, landing page, lessons browser, HSK1 first lesson vocab (10 words). Router with Home and Lessons pages. Cloudflare Pages deployment config. Mobile-first CSS with Noto Sans SC.
+
 **In our app ecosystem:** learn-some-ai (AI learning) + learn-mandarin (Chinese learning)
 
 ## 1. Concept & Vision

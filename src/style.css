@@ -1,0 +1,48 @@
+:root {
+  --color-red: #c0392b;
+  --color-red-light: #e74c3c;
+  --color-gold: #f39c12;
+  --color-gold-light: #f1c40f;
+  --color-bg: #fff8f0;
+  --color-card: #ffffff;
+  --color-text: #2c3e50;
+  --color-text-light: #7f8c8d;
+  --color-border: #e0d6cc;
+  --font-family: 'Noto Sans SC', sans-serif;
+  --radius: 12px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
