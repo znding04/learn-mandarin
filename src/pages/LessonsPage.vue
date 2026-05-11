@@ -1,20 +1,27 @@
 <script setup>
+import { useRouter } from 'vue-router'
 import NavBar from '../components/NavBar.vue'
 
+const router = useRouter()
+
 const lessons = [
-  { id: 1, title: 'Greetings & Basics', wordCount: 10, status: 'not_started' },
-  { id: 2, title: 'Numbers & Counting', wordCount: 10, status: 'locked' },
-  { id: 3, title: 'Family Members', wordCount: 10, status: 'locked' },
-  { id: 4, title: 'Daily Actions', wordCount: 10, status: 'locked' },
-  { id: 5, title: 'Food & Drink', wordCount: 10, status: 'locked' },
+  { id: 1, title: 'Greetings & Basics', wordCount: 10, status: 'ready' },
+  { id: 2, title: 'Pronouns & Particles', wordCount: 6, status: 'ready' },
+  { id: 3, title: 'Numbers & Places', wordCount: 10, status: 'ready' },
 ]
 
 function statusLabel(status) {
-  return status === 'locked' ? 'Locked' : 'Not Started'
+  return status === 'locked' ? 'Locked' : 'Start'
 }
 
 function statusClass(status) {
   return status === 'locked' ? 'badge-locked' : 'badge-ready'
+}
+
+function openLesson(lesson) {
+  if (lesson.status !== 'locked') {
+    router.push(`/study/${lesson.id}`)
+  }
 }
 </script>
 
@@ -32,6 +39,7 @@ function statusClass(status) {
           :key="lesson.id"
           class="lesson-card"
           :class="{ 'lesson-locked': lesson.status === 'locked' }"
+          @click="openLesson(lesson)"
         >
           <div class="lesson-info">
             <span class="lesson-number">Lesson {{ lesson.id }}</span>
@@ -79,10 +87,21 @@ function statusClass(status) {
   border-radius: var(--radius);
   padding: 16px 20px;
   box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.lesson-card:hover {
+  transform: translateY(-1px);
 }
 
 .lesson-locked {
   opacity: 0.55;
+  cursor: default;
+}
+
+.lesson-locked:hover {
+  transform: none;
 }
 
 .lesson-number {

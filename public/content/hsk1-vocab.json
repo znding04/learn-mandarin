@@ -78,5 +78,133 @@
     "english": "who",
     "hskLevel": 1,
     "lessonId": 1
+  },
+  {
+    "id": 11,
+    "chinese": "的",
+    "pinyin": "de",
+    "english": "possessive marker",
+    "hskLevel": 1,
+    "lessonId": 2
+  },
+  {
+    "id": 12,
+    "chinese": "了",
+    "pinyin": "le",
+    "english": "completed action particle",
+    "hskLevel": 1,
+    "lessonId": 2
+  },
+  {
+    "id": 13,
+    "chinese": "不",
+    "pinyin": "bù",
+    "english": "no / not",
+    "hskLevel": 1,
+    "lessonId": 2
+  },
+  {
+    "id": 14,
+    "chinese": "有",
+    "pinyin": "yǒu",
+    "english": "to have",
+    "hskLevel": 1,
+    "lessonId": 2
+  },
+  {
+    "id": 19,
+    "chinese": "我们",
+    "pinyin": "wǒmen",
+    "english": "we / us",
+    "hskLevel": 1,
+    "lessonId": 2
+  },
+  {
+    "id": 20,
+    "chinese": "他们",
+    "pinyin": "tāmen",
+    "english": "they / them",
+    "hskLevel": 1,
+    "lessonId": 2
+  },
+  {
+    "id": 21,
+    "chinese": "人",
+    "pinyin": "rén",
+    "english": "person",
+    "hskLevel": 1,
+    "lessonId": 3
+  },
+  {
+    "id": 22,
+    "chinese": "大",
+    "pinyin": "dà",
+    "english": "big",
+    "hskLevel": 1,
+    "lessonId": 3
+  },
+  {
+    "id": 23,
+    "chinese": "小",
+    "pinyin": "xiǎo",
+    "english": "small",
+    "hskLevel": 1,
+    "lessonId": 3
+  },
+  {
+    "id": 24,
+    "chinese": "中",
+    "pinyin": "zhōng",
+    "english": "middle",
+    "hskLevel": 1,
+    "lessonId": 3
+  },
+  {
+    "id": 25,
+    "chinese": "国",
+    "pinyin": "guó",
+    "english": "country",
+    "hskLevel": 1,
+    "lessonId": 3
+  },
+  {
+    "id": 26,
+    "chinese": "中国",
+    "pinyin": "Zhōngguó",
+    "english": "China",
+    "hskLevel": 1,
+    "lessonId": 3
+  },
+  {
+    "id": 27,
+    "chinese": "北京",
+    "pinyin": "Běijīng",
+    "english": "Beijing",
+    "hskLevel": 1,
+    "lessonId": 3
+  },
+  {
+    "id": 28,
+    "chinese": "上海",
+    "pinyin": "Shànghǎi",
+    "english": "Shanghai",
+    "hskLevel": 1,
+    "lessonId": 3
+  },
+  {
+    "id": 29,
+    "chinese": "个",
+    "pinyin": "gè",
+    "english": "measure word (general)",
+    "hskLevel": 1,
+    "lessonId": 3
+  },
+  {
+    "id": 30,
+    "chinese": "先生",
+    "pinyin": "xiānsheng",
+    "english": "Mr. / sir",
+    "hskLevel": 1,
+    "lessonId": 3
   }
 ]
