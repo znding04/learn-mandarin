@@ -1,7 +1,9 @@
 <script setup>
 import { useRouter } from 'vue-router'
+import { useProgress } from '../composables/useProgress.js'
 
 const router = useRouter()
+const { state, getStreak } = useProgress()
 </script>
 
 <template>
@@ -9,6 +11,10 @@ const router = useRouter()
     <div class="hero">
       <h1 class="hero-title">Learn Mandarin</h1>
       <p class="hero-tagline">Chinese for ABC Kids</p>
+      <div class="hero-stats">
+        <span class="stat-badge">⭐ {{ state.xp }} XP</span>
+        <span class="stat-badge">🔥 {{ getStreak() }} day streak</span>
+      </div>
       <p class="hero-subtitle">Free, fun, and made for you</p>
       <button class="hero-btn" @click="router.push('/lessons')">
         Start Learning
@@ -43,6 +49,22 @@ const router = useRouter()
   font-weight: 500;
   opacity: 0.95;
   margin-bottom: 4px;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.stat-badge {
+  background: rgba(243, 156, 18, 0.15);
+  color: var(--color-gold);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
 }
 
 .hero-subtitle {

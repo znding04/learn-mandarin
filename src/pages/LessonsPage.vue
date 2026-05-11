@@ -1,8 +1,15 @@
 <script setup>
+import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import NavBar from '../components/NavBar.vue'
+import { useProgress } from '../composables/useProgress.js'
 
 const router = useRouter()
+const { state, getStreak, isLessonComplete } = useProgress()
+
+const lessonsCompleted = computed(() =>
+  lessons.filter(l => isLessonComplete(l.id)).length
+)
 
 const lessons = [
   { id: 1, title: 'Greetings & Basics', wordCount: 10, status: 'ready' },
@@ -33,6 +40,11 @@ function openLesson(lesson) {
         <h1>HSK 1</h1>
         <p>Beginner — First 150 words</p>
       </div>
+      <div class="stats-bar">
+        <span class="stat-item">⭐ {{ state.xp }} XP</span>
+        <span class="stat-item">🔥 {{ getStreak() }} streak</span>
+        <span class="stat-item">{{ lessonsCompleted }} / {{ lessons.length }} lessons</span>
+      </div>
       <div class="lesson-list">
         <div
           v-for="lesson in lessons"
@@ -46,7 +58,10 @@ function openLesson(lesson) {
             <h3 class="lesson-title">{{ lesson.title }}</h3>
             <span class="lesson-words">{{ lesson.wordCount }} words</span>
           </div>
-          <span class="lesson-badge" :class="statusClass(lesson.status)">
+          <span v-if="isLessonComplete(lesson.id)" class="lesson-badge badge-complete">
+            ✓ Complete
+          </span>
+          <span v-else class="lesson-badge" :class="statusClass(lesson.status)">
             {{ statusLabel(lesson.status) }}
           </span>
         </div>
@@ -69,6 +84,26 @@ function openLesson(lesson) {
 .level-header p {
   color: var(--color-text-light);
   font-size: 0.95rem;
+}
+
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  background: rgba(243, 156, 18, 0.15);
+  border-radius: var(--radius);
+}
+
+.stat-item {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-gold);
+}
+
+.lesson-card {
+  overflow-wrap: break-word;
 }
 
 .lesson-list {
@@ -138,5 +173,10 @@ function openLesson(lesson) {
 .badge-locked {
   background: #f0f0f0;
   color: #999;
+}
+
+.badge-complete {
+  background: #e8f8f5;
+  color: #27ae60;
 }
 </style>

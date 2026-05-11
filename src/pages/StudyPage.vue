@@ -49,6 +49,17 @@ function rate(quality) {
   }
 }
 
+function speak(text) {
+  if ('speechSynthesis' in window) {
+    const utter = new SpeechSynthesisUtterance(text)
+    utter.lang = 'zh-CN'
+    const voices = speechSynthesis.getVoices()
+    const zhVoice = voices.find(v => v.lang.startsWith('zh'))
+    if (zhVoice) utter.voice = zhVoice
+    speechSynthesis.speak(utter)
+  }
+}
+
 function restart() {
   const due = getDueCards(lessonId.value, allVocab.value)
   if (due.length > 0) {
@@ -101,6 +112,7 @@ function restart() {
               <span v-else class="card-pinyin-hint">Tap to reveal</span>
             </div>
             <div class="card-face card-back">
+              <button class="speak-btn" @click.stop="speak(currentCard.chinese)">🔊</button>
               <span class="card-chinese">{{ currentCard.chinese }}</span>
               <span v-if="showPinyin" class="card-pinyin">{{ currentCard.pinyin }}</span>
               <span class="card-english">{{ currentCard.english }}</span>
@@ -210,6 +222,28 @@ function restart() {
 
 .card-back {
   transform: rotateY(180deg);
+  position: relative;
+}
+
+.speak-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(243, 156, 18, 0.15);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.speak-btn:hover {
+  background: rgba(243, 156, 18, 0.3);
 }
 
 .card-chinese {

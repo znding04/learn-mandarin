@@ -7,6 +7,8 @@
 ## Build Progress
 
 - **Phase 1 Complete (2026-05-10):** Vue 3 + Vite project setup, landing page, lessons browser, HSK1 first lesson vocab (10 words). Router with Home and Lessons pages. Cloudflare Pages deployment config. Mobile-first CSS with Noto Sans SC.
+- **Phase 2 Complete (2026-05-10):** Flashcard SRS system (SM-2), 30 vocab words across 3 lessons, study page with flip animation, pinyin toggle, Easy/Medium/Hard rating.
+- **Phase 3 Complete (2026-05-11):** Gamification UI (XP + streak display on home, nav, lessons pages), Web Speech API TTS pronunciation, mobile polish, Cloudflare Pages deploy.
 
 **In our app ecosystem:** learn-some-ai (AI learning) + learn-mandarin (Chinese learning)
 
