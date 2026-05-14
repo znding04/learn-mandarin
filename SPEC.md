@@ -1,6 +1,6 @@
 # Learn Mandarin — Free Open-Source Chinese Learning for ABC Kids
 
-> **Status:** 🚧 PHASE 3 BUILT — Awaiting Cloudflare deploy (needs `npx wrangler login` or `CLOUDFLARE_API_TOKEN`)
+> **Status:** ✅ PHASE 3 COMPLETE — Build verified. Manual Cloudflare deploy required (interactive auth needed).
 >
 > **Build Decision:** All 7 days of research complete. No hard blockers found. Proceed to implementation.
 
