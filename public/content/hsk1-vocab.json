@@ -206,5 +206,805 @@
     "english": "Mr. / sir",
     "hskLevel": 1,
     "lessonId": 3
+  },
+  {
+    "id": 31,
+    "chinese": "会",
+    "pinyin": "huì",
+    "english": "can / able to",
+    "hskLevel": 1,
+    "lessonId": 4
+  },
+  {
+    "id": 32,
+    "chinese": "说",
+    "pinyin": "shuō",
+    "english": "to speak / to say",
+    "hskLevel": 1,
+    "lessonId": 4
+  },
+  {
+    "id": 33,
+    "chinese": "汉",
+    "pinyin": "hàn",
+    "english": "Han (Chinese)",
+    "hskLevel": 1,
+    "lessonId": 4
+  },
+  {
+    "id": 34,
+    "chinese": "语",
+    "pinyin": "yǔ",
+    "english": "language",
+    "hskLevel": 1,
+    "lessonId": 4
+  },
+  {
+    "id": 35,
+    "chinese": "很",
+    "pinyin": "hěn",
+    "english": "very / quite",
+    "hskLevel": 1,
+    "lessonId": 4
+  },
+  {
+    "id": 36,
+    "chinese": "也",
+    "pinyin": "yě",
+    "english": "also / too",
+    "hskLevel": 1,
+    "lessonId": 4
+  },
+  {
+    "id": 37,
+    "chinese": "都",
+    "pinyin": "dōu",
+    "english": "all / both",
+    "hskLevel": 1,
+    "lessonId": 4
+  },
+  {
+    "id": 38,
+    "chinese": "一",
+    "pinyin": "yī",
+    "english": "one",
+    "hskLevel": 1,
+    "lessonId": 4
+  },
+  {
+    "id": 39,
+    "chinese": "二",
+    "pinyin": "èr",
+    "english": "two",
+    "hskLevel": 1,
+    "lessonId": 4
+  },
+  {
+    "id": 40,
+    "chinese": "三",
+    "pinyin": "sān",
+    "english": "three",
+    "hskLevel": 1,
+    "lessonId": 4
+  },
+  {
+    "id": 41,
+    "chinese": "四",
+    "pinyin": "sì",
+    "english": "four",
+    "hskLevel": 1,
+    "lessonId": 4
+  },
+  {
+    "id": 42,
+    "chinese": "五",
+    "pinyin": "wǔ",
+    "english": "five",
+    "hskLevel": 1,
+    "lessonId": 4
+  },
+  {
+    "id": 43,
+    "chinese": "六",
+    "pinyin": "liù",
+    "english": "six",
+    "hskLevel": 1,
+    "lessonId": 4
+  },
+  {
+    "id": 44,
+    "chinese": "七",
+    "pinyin": "qī",
+    "english": "seven",
+    "hskLevel": 1,
+    "lessonId": 4
+  },
+  {
+    "id": 45,
+    "chinese": "八",
+    "pinyin": "bā",
+    "english": "eight",
+    "hskLevel": 1,
+    "lessonId": 4
+  },
+  {
+    "id": 46,
+    "chinese": "九",
+    "pinyin": "jiǔ",
+    "english": "nine",
+    "hskLevel": 1,
+    "lessonId": 4
+  },
+  {
+    "id": 47,
+    "chinese": "十",
+    "pinyin": "shí",
+    "english": "ten",
+    "hskLevel": 1,
+    "lessonId": 4
+  },
+  {
+    "id": 48,
+    "chinese": "年",
+    "pinyin": "nián",
+    "english": "year",
+    "hskLevel": 1,
+    "lessonId": 5
+  },
+  {
+    "id": 49,
+    "chinese": "月",
+    "pinyin": "yuè",
+    "english": "month / moon",
+    "hskLevel": 1,
+    "lessonId": 5
+  },
+  {
+    "id": 50,
+    "chinese": "日",
+    "pinyin": "rì",
+    "english": "day / sun",
+    "hskLevel": 1,
+    "lessonId": 5
+  },
+  {
+    "id": 51,
+    "chinese": "号",
+    "pinyin": "hào",
+    "english": "number / date",
+    "hskLevel": 1,
+    "lessonId": 5
+  },
+  {
+    "id": 52,
+    "chinese": "时",
+    "pinyin": "shí",
+    "english": "time / hour",
+    "hskLevel": 1,
+    "lessonId": 5
+  },
+  {
+    "id": 53,
+    "chinese": "分",
+    "pinyin": "fēn",
+    "english": "minute / to divide",
+    "hskLevel": 1,
+    "lessonId": 5
+  },
+  {
+    "id": 54,
+    "chinese": "现在",
+    "pinyin": "xiànzài",
+    "english": "now / currently",
+    "hskLevel": 1,
+    "lessonId": 5
+  },
+  {
+    "id": 55,
+    "chinese": "今天",
+    "pinyin": "jīntiān",
+    "english": "today",
+    "hskLevel": 1,
+    "lessonId": 5
+  },
+  {
+    "id": 56,
+    "chinese": "明天",
+    "pinyin": "míngtiān",
+    "english": "tomorrow",
+    "hskLevel": 1,
+    "lessonId": 5
+  },
+  {
+    "id": 57,
+    "chinese": "昨天",
+    "pinyin": "zuótiān",
+    "english": "yesterday",
+    "hskLevel": 1,
+    "lessonId": 5
+  },
+  {
+    "id": 58,
+    "chinese": "爸爸",
+    "pinyin": "bàba",
+    "english": "dad / father",
+    "hskLevel": 1,
+    "lessonId": 6
+  },
+  {
+    "id": 59,
+    "chinese": "妈妈",
+    "pinyin": "māma",
+    "english": "mom / mother",
+    "hskLevel": 1,
+    "lessonId": 6
+  },
+  {
+    "id": 60,
+    "chinese": "老师",
+    "pinyin": "lǎoshī",
+    "english": "teacher",
+    "hskLevel": 1,
+    "lessonId": 6
+  },
+  {
+    "id": 61,
+    "chinese": "朋友",
+    "pinyin": "péngyou",
+    "english": "friend",
+    "hskLevel": 1,
+    "lessonId": 6
+  },
+  {
+    "id": 62,
+    "chinese": "家",
+    "pinyin": "jiā",
+    "english": "home / family",
+    "hskLevel": 1,
+    "lessonId": 6
+  },
+  {
+    "id": 63,
+    "chinese": "学校",
+    "pinyin": "xuéxiào",
+    "english": "school",
+    "hskLevel": 1,
+    "lessonId": 6
+  },
+  {
+    "id": 64,
+    "chinese": "同学",
+    "pinyin": "tóngxué",
+    "english": "classmate",
+    "hskLevel": 1,
+    "lessonId": 6
+  },
+  {
+    "id": 65,
+    "chinese": "学生",
+    "pinyin": "xuéshēng",
+    "english": "student",
+    "hskLevel": 1,
+    "lessonId": 6
+  },
+  {
+    "id": 66,
+    "chinese": "吃",
+    "pinyin": "chī",
+    "english": "to eat",
+    "hskLevel": 1,
+    "lessonId": 7
+  },
+  {
+    "id": 67,
+    "chinese": "喝",
+    "pinyin": "hē",
+    "english": "to drink",
+    "hskLevel": 1,
+    "lessonId": 7
+  },
+  {
+    "id": 68,
+    "chinese": "水",
+    "pinyin": "shuǐ",
+    "english": "water",
+    "hskLevel": 1,
+    "lessonId": 7
+  },
+  {
+    "id": 69,
+    "chinese": "茶",
+    "pinyin": "chá",
+    "english": "tea",
+    "hskLevel": 1,
+    "lessonId": 7
+  },
+  {
+    "id": 70,
+    "chinese": "咖啡",
+    "pinyin": "kāfēi",
+    "english": "coffee",
+    "hskLevel": 1,
+    "lessonId": 7
+  },
+  {
+    "id": 71,
+    "chinese": "喜欢",
+    "pinyin": "xǐhuān",
+    "english": "to like",
+    "hskLevel": 1,
+    "lessonId": 7
+  },
+  {
+    "id": 72,
+    "chinese": "去",
+    "pinyin": "qù",
+    "english": "to go",
+    "hskLevel": 1,
+    "lessonId": 7
+  },
+  {
+    "id": 73,
+    "chinese": "来",
+    "pinyin": "lái",
+    "english": "to come",
+    "hskLevel": 1,
+    "lessonId": 7
+  },
+  {
+    "id": 74,
+    "chinese": "看",
+    "pinyin": "kàn",
+    "english": "to see / to look",
+    "hskLevel": 1,
+    "lessonId": 7
+  },
+  {
+    "id": 75,
+    "chinese": "做",
+    "pinyin": "zuò",
+    "english": "to do / to make",
+    "hskLevel": 1,
+    "lessonId": 7
+  },
+  {
+    "id": 76,
+    "chinese": "买",
+    "pinyin": "mǎi",
+    "english": "to buy",
+    "hskLevel": 1,
+    "lessonId": 7
+  },
+  {
+    "id": 77,
+    "chinese": "走",
+    "pinyin": "zǒu",
+    "english": "to walk / to go",
+    "hskLevel": 1,
+    "lessonId": 8
+  },
+  {
+    "id": 78,
+    "chinese": "跑",
+    "pinyin": "pǎo",
+    "english": "to run",
+    "hskLevel": 1,
+    "lessonId": 8
+  },
+  {
+    "id": 79,
+    "chinese": "坐",
+    "pinyin": "zuò",
+    "english": "to sit / to ride",
+    "hskLevel": 1,
+    "lessonId": 8
+  },
+  {
+    "id": 80,
+    "chinese": "车",
+    "pinyin": "chē",
+    "english": "car / vehicle",
+    "hskLevel": 1,
+    "lessonId": 8
+  },
+  {
+    "id": 81,
+    "chinese": "飞机",
+    "pinyin": "fēijī",
+    "english": "airplane",
+    "hskLevel": 1,
+    "lessonId": 8
+  },
+  {
+    "id": 82,
+    "chinese": "火车",
+    "pinyin": "huǒchē",
+    "english": "train",
+    "hskLevel": 1,
+    "lessonId": 8
+  },
+  {
+    "id": 83,
+    "chinese": "地铁",
+    "pinyin": "dìtiě",
+    "english": "subway / metro",
+    "hskLevel": 1,
+    "lessonId": 8
+  },
+  {
+    "id": 84,
+    "chinese": "出",
+    "pinyin": "chū",
+    "english": "to go out / exit",
+    "hskLevel": 1,
+    "lessonId": 8
+  },
+  {
+    "id": 85,
+    "chinese": "回",
+    "pinyin": "huí",
+    "english": "to return / to go back",
+    "hskLevel": 1,
+    "lessonId": 8
+  },
+  {
+    "id": 86,
+    "chinese": "工作",
+    "pinyin": "gōngzuò",
+    "english": "work / job",
+    "hskLevel": 1,
+    "lessonId": 9
+  },
+  {
+    "id": 87,
+    "chinese": "忙",
+    "pinyin": "máng",
+    "english": "busy",
+    "hskLevel": 1,
+    "lessonId": 9
+  },
+  {
+    "id": 88,
+    "chinese": "钱",
+    "pinyin": "qián",
+    "english": "money",
+    "hskLevel": 1,
+    "lessonId": 9
+  },
+  {
+    "id": 89,
+    "chinese": "医院",
+    "pinyin": "yīyuàn",
+    "english": "hospital",
+    "hskLevel": 1,
+    "lessonId": 9
+  },
+  {
+    "id": 90,
+    "chinese": "公司",
+    "pinyin": "gōngsī",
+    "english": "company",
+    "hskLevel": 1,
+    "lessonId": 9
+  },
+  {
+    "id": 91,
+    "chinese": "商店",
+    "pinyin": "shāngdiàn",
+    "english": "store / shop",
+    "hskLevel": 1,
+    "lessonId": 9
+  },
+  {
+    "id": 92,
+    "chinese": "饭馆",
+    "pinyin": "fànguǎn",
+    "english": "restaurant",
+    "hskLevel": 1,
+    "lessonId": 9
+  },
+  {
+    "id": 93,
+    "chinese": "医院",
+    "pinyin": "yīyuàn",
+    "english": "hospital",
+    "hskLevel": 1,
+    "lessonId": 9
+  },
+  {
+    "id": 94,
+    "chinese": "电影",
+    "pinyin": "diànyǐng",
+    "english": "movie / film",
+    "hskLevel": 1,
+    "lessonId": 10
+  },
+  {
+    "id": 95,
+    "chinese": "音乐",
+    "pinyin": "yīnyuè",
+    "english": "music",
+    "hskLevel": 1,
+    "lessonId": 10
+  },
+  {
+    "id": 96,
+    "chinese": "书",
+    "pinyin": "shū",
+    "english": "book",
+    "hskLevel": 1,
+    "lessonId": 10
+  },
+  {
+    "id": 97,
+    "chinese": "电视",
+    "pinyin": "diànshì",
+    "english": "TV / television",
+    "hskLevel": 1,
+    "lessonId": 10
+  },
+  {
+    "id": 98,
+    "chinese": "天气",
+    "pinyin": "tiānqì",
+    "english": "weather",
+    "hskLevel": 1,
+    "lessonId": 10
+  },
+  {
+    "id": 99,
+    "chinese": "热",
+    "pinyin": "rè",
+    "english": "hot (weather)",
+    "hskLevel": 1,
+    "lessonId": 10
+  },
+  {
+    "id": 100,
+    "chinese": "冷",
+    "pinyin": "lěng",
+    "english": "cold",
+    "hskLevel": 1,
+    "lessonId": 10
+  },
+  {
+    "id": 101,
+    "chinese": "下雨",
+    "pinyin": "xiàyǔ",
+    "english": "to rain",
+    "hskLevel": 1,
+    "lessonId": 10
+  },
+  {
+    "id": 102,
+    "chinese": "雪",
+    "pinyin": "xuě",
+    "english": "snow",
+    "hskLevel": 1,
+    "lessonId": 10
+  },
+  {
+    "id": 103,
+    "chinese": "漂亮",
+    "pinyin": "piàoliang",
+    "english": "beautiful / pretty",
+    "hskLevel": 1,
+    "lessonId": 11
+  },
+  {
+    "id": 104,
+    "chinese": "高",
+    "pinyin": "gāo",
+    "english": "tall / high",
+    "hskLevel": 1,
+    "lessonId": 11
+  },
+  {
+    "id": 105,
+    "chinese": "矮",
+    "pinyin": "ǎi",
+    "english": "short (height)",
+    "hskLevel": 1,
+    "lessonId": 11
+  },
+  {
+    "id": 106,
+    "chinese": "长",
+    "pinyin": "cháng",
+    "english": "long",
+    "hskLevel": 1,
+    "lessonId": 11
+  },
+  {
+    "id": 107,
+    "chinese": "短",
+    "pinyin": "duǎn",
+    "english": "short (length)",
+    "hskLevel": 1,
+    "lessonId": 11
+  },
+  {
+    "id": 108,
+    "chinese": "新",
+    "pinyin": "xīn",
+    "english": "new",
+    "hskLevel": 1,
+    "lessonId": 11
+  },
+  {
+    "id": 109,
+    "chinese": "旧",
+    "pinyin": "jiù",
+    "english": "old (not new)",
+    "hskLevel": 1,
+    "lessonId": 11
+  },
+  {
+    "id": 110,
+    "chinese": "快",
+    "pinyin": "kuài",
+    "english": "fast / quick",
+    "hskLevel": 1,
+    "lessonId": 11
+  },
+  {
+    "id": 111,
+    "chinese": "慢",
+    "pinyin": "màn",
+    "english": "slow",
+    "hskLevel": 1,
+    "lessonId": 11
+  },
+  {
+    "id": 112,
+    "chinese": "多",
+    "pinyin": "duō",
+    "english": "many / much",
+    "hskLevel": 1,
+    "lessonId": 11
+  },
+  {
+    "id": 113,
+    "chinese": "少",
+    "pinyin": "shǎo",
+    "english": "few / little",
+    "hskLevel": 1,
+    "lessonId": 11
+  },
+  {
+    "id": 114,
+    "chinese": "水果",
+    "pinyin": "shuǐguǒ",
+    "english": "fruit",
+    "hskLevel": 1,
+    "lessonId": 12
+  },
+  {
+    "id": 115,
+    "chinese": "苹果",
+    "pinyin": "píngguǒ",
+    "english": "apple",
+    "hskLevel": 1,
+    "lessonId": 12
+  },
+  {
+    "id": 116,
+    "chinese": "香蕉",
+    "pinyin": "xiāngjiāo",
+    "english": "banana",
+    "hskLevel": 1,
+    "lessonId": 12
+  },
+  {
+    "id": 117,
+    "chinese": "衣服",
+    "pinyin": "yīfu",
+    "english": "clothes / clothing",
+    "hskLevel": 1,
+    "lessonId": 12
+  },
+  {
+    "id": 118,
+    "chinese": "颜色",
+    "pinyin": "yánsè",
+    "english": "color",
+    "hskLevel": 1,
+    "lessonId": 12
+  },
+  {
+    "id": 119,
+    "chinese": "红",
+    "pinyin": "hóng",
+    "english": "red",
+    "hskLevel": 1,
+    "lessonId": 12
+  },
+  {
+    "id": 120,
+    "chinese": "蓝",
+    "pinyin": "lán",
+    "english": "blue",
+    "hskLevel": 1,
+    "lessonId": 12
+  },
+  {
+    "id": 121,
+    "chinese": "绿",
+    "pinyin": "lǜ",
+    "english": "green",
+    "hskLevel": 1,
+    "lessonId": 12
+  },
+  {
+    "id": 122,
+    "chinese": "白",
+    "pinyin": "bái",
+    "english": "white / blank",
+    "hskLevel": 1,
+    "lessonId": 12
+  },
+  {
+    "id": 123,
+    "chinese": "黑",
+    "pinyin": "hēi",
+    "english": "black",
+    "hskLevel": 1,
+    "lessonId": 12
+  },
+  {
+    "id": 124,
+    "chinese": "谢谢",
+    "pinyin": "xièxie",
+    "english": "thank you",
+    "hskLevel": 1,
+    "lessonId": 13
+  },
+  {
+    "id": 125,
+    "chinese": "请",
+    "pinyin": "qǐng",
+    "english": "please",
+    "hskLevel": 1,
+    "lessonId": 13
+  },
+  {
+    "id": 126,
+    "chinese": "对不起",
+    "pinyin": "duìbuqǐ",
+    "english": "sorry / excuse me",
+    "hskLevel": 1,
+    "lessonId": 13
+  },
+  {
+    "id": 127,
+    "chinese": "没关系",
+    "pinyin": "méi guānxi",
+    "english": "that's okay / no problem",
+    "hskLevel": 1,
+    "lessonId": 13
+  },
+  {
+    "id": 128,
+    "chinese": "再见",
+    "pinyin": "zàijiàn",
+    "english": "goodbye",
+    "hskLevel": 1,
+    "lessonId": 13
+  },
+  {
+    "id": 129,
+    "chinese": "晚安",
+    "pinyin": "wǎn'ān",
+    "english": "good night",
+    "hskLevel": 1,
+    "lessonId": 13
+  },
+  {
+    "id": 130,
+    "chinese": "早上好",
+    "pinyin": "zǎoshang hǎo",
+    "english": "good morning",
+    "hskLevel": 1,
+    "lessonId": 13
   }
 ]
