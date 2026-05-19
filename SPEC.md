@@ -1,6 +1,6 @@
 # Learn Mandarin — Free Open-Source Chinese Learning for ABC Kids
 
-> **Status:** ✅ PHASE 3 COMPLETE — Build verified. Manual Cloudflare deploy required (interactive auth needed).
+> **Status:** BUILD COMPLETE — Manual Cloudflare credential setup required to enable GitHub Actions auto-deploy.
 >
 > **Build Decision:** All 7 days of research complete. No hard blockers found. Proceed to implementation.
 
