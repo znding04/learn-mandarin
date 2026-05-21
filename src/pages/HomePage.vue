@@ -1,9 +1,16 @@
 <script setup>
+import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useProgress } from '../composables/useProgress.js'
 
 const router = useRouter()
 const { state, getStreak } = useProgress()
+
+const DAILY_GOAL = 50
+const xpToday = computed(() => state.xp % DAILY_GOAL)
+const xpRemaining = computed(() => DAILY_GOAL - xpToday.value)
+const goalPercent = computed(() => Math.min((xpToday.value / DAILY_GOAL) * 100, 100))
+const goalReached = computed(() => xpToday.value >= DAILY_GOAL)
 </script>
 
 <template>
@@ -15,9 +22,19 @@ const { state, getStreak } = useProgress()
         <span class="stat-badge">⭐ {{ state.xp }} XP</span>
         <span class="stat-badge">🔥 {{ getStreak() }} day streak</span>
       </div>
+
+      <!-- Daily goal progress -->
+      <div class="daily-goal">
+        <div class="goal-bar">
+          <div class="goal-fill" :style="{ width: goalPercent + '%' }"></div>
+        </div>
+        <p class="goal-text" v-if="goalReached">Daily goal reached!</p>
+        <p class="goal-text" v-else>{{ xpRemaining }} XP until daily goal!</p>
+      </div>
+
       <p class="hero-subtitle">Free, fun, and made for you</p>
       <button class="hero-btn" @click="router.push('/lessons')">
-        Start Learning
+        Continue Learning
       </button>
     </div>
   </div>
@@ -65,6 +82,33 @@ const { state, getStreak } = useProgress()
   font-weight: 600;
   padding: 6px 14px;
   border-radius: 20px;
+}
+
+/* Daily goal */
+.daily-goal {
+  margin: 16px auto 8px;
+  max-width: 280px;
+}
+
+.goal-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.goal-fill {
+  height: 100%;
+  background: var(--color-gold);
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+.goal-text {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  font-weight: 500;
 }
 
 .hero-subtitle {

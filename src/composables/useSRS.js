@@ -40,7 +40,11 @@ export function useSRS() {
       repetitions: 0,
     }
 
-    // SM-2 algorithm
+    // SM-2 (SuperMemo 2) spaced repetition algorithm:
+    // - If quality < 3 (hard): reset repetitions and interval to 1 day
+    // - If quality >= 3: interval progresses 1 → 6 → prev * easeFactor
+    // - Ease factor: EF' = EF + (0.1 - (5-q) * (0.08 + (5-q) * 0.02)), min 1.3
+    // - Next review = now + interval (in days)
     const q = quality
     let { interval, easeFactor, repetitions } = card
 

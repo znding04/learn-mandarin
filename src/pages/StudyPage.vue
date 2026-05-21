@@ -8,7 +8,7 @@ import { useProgress } from '../composables/useProgress.js'
 const route = useRoute()
 const router = useRouter()
 const { getDueCards, getCardsByLesson, reviewCard } = useSRS()
-const { completeLesson } = useProgress()
+const { completeLesson, getStreak } = useProgress()
 
 const lessonId = computed(() => Number(route.params.lessonId))
 const allVocab = ref([])
@@ -17,6 +17,11 @@ const currentIndex = ref(0)
 const isFlipped = ref(false)
 const showPinyin = ref(true)
 const sessionComplete = ref(false)
+const hasTTS = ref('speechSynthesis' in window)
+
+// Session stats
+const cardsStudied = ref(0)
+const xpEarned = ref(0)
 
 const currentCard = computed(() => cards.value[currentIndex.value] || null)
 const progress = computed(() => `Card ${currentIndex.value + 1} of ${cards.value.length}`)
@@ -39,12 +44,14 @@ function flipCard() {
 
 function rate(quality) {
   reviewCard(currentCard.value.id, quality)
+  cardsStudied.value++
 
   if (currentIndex.value < cards.value.length - 1) {
     currentIndex.value++
     isFlipped.value = false
   } else {
     completeLesson(lessonId.value)
+    xpEarned.value += 20
     sessionComplete.value = true
   }
 }
@@ -70,6 +77,8 @@ function restart() {
   currentIndex.value = 0
   isFlipped.value = false
   sessionComplete.value = false
+  cardsStudied.value = 0
+  xpEarned.value = 0
 }
 </script>
 
@@ -112,7 +121,8 @@ function restart() {
               <span v-else class="card-pinyin-hint">Tap to reveal</span>
             </div>
             <div class="card-face card-back">
-              <button class="speak-btn" @click.stop="speak(currentCard.chinese)">🔊</button>
+              <button v-if="hasTTS" class="speak-btn" @click.stop="speak(currentCard.chinese)">🔊</button>
+              <span v-else class="pinyin-fallback">{{ currentCard.pinyin }}</span>
               <span class="card-chinese">{{ currentCard.chinese }}</span>
               <span v-if="showPinyin" class="card-pinyin">{{ currentCard.pinyin }}</span>
               <span class="card-english">{{ currentCard.english }}</span>
@@ -128,6 +138,22 @@ function restart() {
           <button class="rate-btn rate-hard" @click="rate(1)">Hard</button>
           <button class="rate-btn rate-medium" @click="rate(3)">Medium</button>
           <button class="rate-btn rate-easy" @click="rate(5)">Easy</button>
+        </div>
+
+        <!-- Session stats panel -->
+        <div class="session-stats">
+          <div class="stat-item">
+            <span class="stat-value">{{ cardsStudied }}</span>
+            <span class="stat-label">Cards Studied</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">🔥 {{ getStreak() }}</span>
+            <span class="stat-label">Day Streak</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">+{{ xpEarned }}</span>
+            <span class="stat-label">XP Earned</span>
+          </div>
         </div>
       </div>
 
@@ -361,6 +387,50 @@ function restart() {
 
 .btn-outline:hover {
   background: var(--color-border);
+}
+
+/* Session stats */
+.session-stats {
+  display: flex;
+  justify-content: space-around;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 16px 12px;
+  margin-top: 24px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* TTS fallback */
+.pinyin-fallback {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(243, 156, 18, 0.15);
+  color: var(--color-gold);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
 }
 
 .loading {

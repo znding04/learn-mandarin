@@ -1,5 +1,5 @@
 <script setup>
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import { useProgress } from '../composables/useProgress.js'
 
 const props = defineProps({
@@ -7,6 +7,7 @@ const props = defineProps({
 })
 
 const router = useRouter()
+const route = useRoute()
 const { state, getStreak } = useProgress()
 </script>
 
@@ -18,7 +19,18 @@ const { state, getStreak } = useProgress()
       <button v-if="showBack" class="navbar-back" @click="router.back()">
         &larr; Back
       </button>
-      <router-link v-else to="/" class="navbar-home">Home</router-link>
+      <router-link
+        v-else-if="route.path !== '/'"
+        to="/"
+        class="navbar-link"
+        :class="{ active: route.path === '/' }"
+      >Home</router-link>
+      <router-link
+        v-if="!showBack && route.path !== '/lessons'"
+        to="/lessons"
+        class="navbar-link"
+        :class="{ active: route.path === '/lessons' }"
+      >Lessons</router-link>
     </div>
   </nav>
 </template>
@@ -52,17 +64,27 @@ const { state, getStreak } = useProgress()
 }
 
 .navbar-back,
-.navbar-home {
+.navbar-link {
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
-  padding: 6px 14px;
+  padding: 10px 16px;
   border-radius: var(--radius);
   font-size: 0.9rem;
   font-weight: 500;
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar-back:hover,
-.navbar-home:hover {
+.navbar-link:hover {
   background: rgba(255, 255, 255, 0.3);
+}
+
+.navbar-link.active {
+  background: rgba(255, 255, 255, 0.35);
+  font-weight: 700;
 }
 </style>
