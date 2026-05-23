@@ -704,14 +704,6 @@
     "lessonId": 9
   },
   {
-    "id": 93,
-    "chinese": "医院",
-    "pinyin": "yīyuàn",
-    "english": "hospital",
-    "hskLevel": 1,
-    "lessonId": 9
-  },
-  {
     "id": 94,
     "chinese": "电影",
     "pinyin": "diànyǐng",
@@ -1006,5 +998,181 @@
     "english": "good morning",
     "hskLevel": 1,
     "lessonId": 13
+  },
+  {
+    "id": 131,
+    "chinese": "米饭",
+    "pinyin": "mǐ fàn",
+    "english": "rice",
+    "hskLevel": 1,
+    "lessonId": 14
+  },
+  {
+    "id": 132,
+    "chinese": "面条",
+    "pinyin": "miàn tiáo",
+    "english": "noodles",
+    "hskLevel": 1,
+    "lessonId": 14
+  },
+  {
+    "id": 133,
+    "chinese": "牛奶",
+    "pinyin": "niú nǎi",
+    "english": "milk",
+    "hskLevel": 1,
+    "lessonId": 14
+  },
+  {
+    "id": 134,
+    "chinese": "学习",
+    "pinyin": "xué xí",
+    "english": "to study / to learn",
+    "hskLevel": 1,
+    "lessonId": 14
+  },
+  {
+    "id": 135,
+    "chinese": "运动",
+    "pinyin": "yùn dòng",
+    "english": "to exercise / sport",
+    "hskLevel": 1,
+    "lessonId": 14
+  },
+  {
+    "id": 136,
+    "chinese": "累",
+    "pinyin": "lèi",
+    "english": "tired",
+    "hskLevel": 1,
+    "lessonId": 14
+  },
+  {
+    "id": 137,
+    "chinese": "高兴",
+    "pinyin": "gāo xìng",
+    "english": "happy",
+    "hskLevel": 1,
+    "lessonId": 14
+  },
+  {
+    "id": 138,
+    "chinese": "左边",
+    "pinyin": "zuǒ biān",
+    "english": "left (side)",
+    "hskLevel": 1,
+    "lessonId": 14
+  },
+  {
+    "id": 139,
+    "chinese": "右边",
+    "pinyin": "yòu biān",
+    "english": "right (side)",
+    "hskLevel": 1,
+    "lessonId": 14
+  },
+  {
+    "id": 140,
+    "chinese": "分钟",
+    "pinyin": "fēn zhōng",
+    "english": "minute",
+    "hskLevel": 1,
+    "lessonId": 14
+  },
+  {
+    "id": 141,
+    "chinese": "小时",
+    "pinyin": "xiǎo shí",
+    "english": "hour",
+    "hskLevel": 1,
+    "lessonId": 14
+  },
+  {
+    "id": 142,
+    "chinese": "时间",
+    "pinyin": "shí jiān",
+    "english": "time",
+    "hskLevel": 1,
+    "lessonId": 15
+  },
+  {
+    "id": 143,
+    "chinese": "星期",
+    "pinyin": "xīng qī",
+    "english": "week",
+    "hskLevel": 1,
+    "lessonId": 15
+  },
+  {
+    "id": 144,
+    "chinese": "雨",
+    "pinyin": "yǔ",
+    "english": "rain",
+    "hskLevel": 1,
+    "lessonId": 15
+  },
+  {
+    "id": 145,
+    "chinese": "雪",
+    "pinyin": "xuě",
+    "english": "snow",
+    "hskLevel": 1,
+    "lessonId": 15
+  },
+  {
+    "id": 146,
+    "chinese": "外面",
+    "pinyin": "wài miàn",
+    "english": "outside",
+    "hskLevel": 1,
+    "lessonId": 15
+  },
+  {
+    "id": 147,
+    "chinese": "里面",
+    "pinyin": "lǐ miàn",
+    "english": "inside",
+    "hskLevel": 1,
+    "lessonId": 15
+  },
+  {
+    "id": 148,
+    "chinese": "上面",
+    "pinyin": "shàng miàn",
+    "english": "above / on top",
+    "hskLevel": 1,
+    "lessonId": 15
+  },
+  {
+    "id": 149,
+    "chinese": "下面",
+    "pinyin": "xià miàn",
+    "english": "below / underneath",
+    "hskLevel": 1,
+    "lessonId": 15
+  },
+  {
+    "id": 150,
+    "chinese": "前面",
+    "pinyin": "qián miàn",
+    "english": "front / in front",
+    "hskLevel": 1,
+    "lessonId": 15
+  },
+  {
+    "id": 151,
+    "chinese": "后面",
+    "pinyin": "hòu miàn",
+    "english": "behind / back",
+    "hskLevel": 1,
+    "lessonId": 15
+  },
+  {
+    "id": 152,
+    "chinese": "医院",
+    "pinyin": "yī yuàn",
+    "english": "hospital",
+    "hskLevel": 1,
+    "lessonId": 15
   }
 ]

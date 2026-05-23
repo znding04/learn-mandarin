@@ -12,9 +12,21 @@ const lessonsCompleted = computed(() =>
 )
 
 const lessons = [
-  { id: 1, title: 'Greetings & Basics', wordCount: 10, status: 'ready' },
-  { id: 2, title: 'Pronouns & Particles', wordCount: 6, status: 'ready' },
-  { id: 3, title: 'Numbers & Places', wordCount: 10, status: 'ready' },
+  { id: 1, title: 'Greetings & Basics', wordCount: 10 },
+  { id: 2, title: 'Pronouns & Particles', wordCount: 6 },
+  { id: 3, title: 'Numbers & Places', wordCount: 10 },
+  { id: 4, title: 'Question Words', wordCount: 17 },
+  { id: 5, title: 'Family & People', wordCount: 10 },
+  { id: 6, title: 'Time & Dates', wordCount: 8 },
+  { id: 7, title: 'Food & Drink', wordCount: 11 },
+  { id: 8, title: 'Daily Activities', wordCount: 9 },
+  { id: 9, title: 'Adjectives & Descriptions', wordCount: 8 },
+  { id: 10, title: 'Travel & Directions', wordCount: 9 },
+  { id: 11, title: 'Shopping & Money', wordCount: 11 },
+  { id: 12, title: 'Nature & Weather', wordCount: 10 },
+  { id: 13, title: 'Everyday Objects', wordCount: 7 },
+  { id: 14, title: 'Food & Drink II', wordCount: 12 },
+  { id: 15, title: 'Time & Weather II', wordCount: 12 },
 ]
 
 function statusLabel(status) {

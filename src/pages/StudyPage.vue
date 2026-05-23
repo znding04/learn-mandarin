@@ -36,6 +36,10 @@ onMounted(async () => {
   } else {
     cards.value = getCardsByLesson(lessonId.value, allVocab.value)
   }
+
+  speechSynthesis.onvoiceschanged = () => {
+    hasTTS.value = 'speechSynthesis' in window
+  }
 })
 
 function flipCard() {
@@ -58,11 +62,13 @@ function rate(quality) {
 
 function speak(text) {
   if ('speechSynthesis' in window) {
+    speechSynthesis.cancel()
     const utter = new SpeechSynthesisUtterance(text)
     utter.lang = 'zh-CN'
     const voices = speechSynthesis.getVoices()
-    const zhVoice = voices.find(v => v.lang.startsWith('zh'))
+    const zhVoice = voices.find(v => v.lang.startsWith('zh')) || voices[0]
     if (zhVoice) utter.voice = zhVoice
+    utter.rate = 0.85
     speechSynthesis.speak(utter)
   }
 }
