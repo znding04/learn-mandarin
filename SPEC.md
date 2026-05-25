@@ -1,6 +1,6 @@
 # Learn Mandarin — Free Open-Source Chinese Learning for ABC Kids
 
-> **Status:** BUILD COMPLETE — Manual Cloudflare credential setup required to enable GitHub Actions auto-deploy.
+> **Status:** BUILD COMPLETE — Manual Cloudflare credential setup required to enable GitHub Actions auto-deploy. Deploy script fixed (2026-05-25) to clean Workers-style wrangler.json before Pages deploy.
 >
 > **Build Decision:** All 7 days of research complete. No hard blockers found. Proceed to implementation.
 
