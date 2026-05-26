@@ -1,7 +1,7 @@
 # Learn Mandarin — Free Open-Source Chinese Learning for ABC Kids
 
-> **Status:** BUILD COMPLETE — Manual Cloudflare credential setup required to enable GitHub Actions auto-deploy. Deploy script fixed (2026-05-25) to clean Workers-style wrangler.json before Pages deploy.
->
+> **Status:** BUILD COMPLETE — GitHub Actions deploy workflow ready. Requires manual setup of CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID secrets per DEPLOY.md. Deploy script improved (2026-05-26) — now removes all Workers/Vite plugin keys from dist/wrangler.json and actually runs the pages deploy command.
+
 > **Build Decision:** All 7 days of research complete. No hard blockers found. Proceed to implementation.
 
 ## Build Progress
