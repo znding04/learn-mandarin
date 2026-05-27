@@ -29,18 +29,8 @@ const lessons = [
   { id: 15, title: 'Time & Weather II', wordCount: 12 },
 ]
 
-function statusLabel(status) {
-  return status === 'locked' ? 'Locked' : 'Start'
-}
-
-function statusClass(status) {
-  return status === 'locked' ? 'badge-locked' : 'badge-ready'
-}
-
 function openLesson(lesson) {
-  if (lesson.status !== 'locked') {
-    router.push(`/study/${lesson.id}`)
-  }
+  router.push(`/study/${lesson.id}`)
 }
 </script>
 
@@ -62,7 +52,6 @@ function openLesson(lesson) {
           v-for="lesson in lessons"
           :key="lesson.id"
           class="lesson-card"
-          :class="{ 'lesson-locked': lesson.status === 'locked' }"
           @click="openLesson(lesson)"
         >
           <div class="lesson-info">
@@ -73,8 +62,8 @@ function openLesson(lesson) {
           <span v-if="isLessonComplete(lesson.id)" class="lesson-badge badge-complete">
             ✓ Complete
           </span>
-          <span v-else class="lesson-badge" :class="statusClass(lesson.status)">
-            {{ statusLabel(lesson.status) }}
+          <span v-else class="lesson-badge badge-ready">
+            Start
           </span>
         </div>
       </div>
@@ -142,15 +131,6 @@ function openLesson(lesson) {
   transform: translateY(-1px);
 }
 
-.lesson-locked {
-  opacity: 0.55;
-  cursor: default;
-}
-
-.lesson-locked:hover {
-  transform: none;
-}
-
 .lesson-number {
   font-size: 0.8rem;
   color: var(--color-text-light);
@@ -180,11 +160,6 @@ function openLesson(lesson) {
 .badge-ready {
   background: #e8f8f5;
   color: #1abc9c;
-}
-
-.badge-locked {
-  background: #f0f0f0;
-  color: #999;
 }
 
 .badge-complete {
