@@ -54,6 +54,7 @@ function rate(quality) {
     currentIndex.value++
     isFlipped.value = false
   } else {
+    // completeLesson() already adds +20 XP inside useProgress.js
     completeLesson(lessonId.value)
     xpEarned.value += 20
     sessionComplete.value = true
@@ -123,8 +124,7 @@ function restart() {
           <div class="card" :class="{ 'is-flipped': isFlipped }">
             <div class="card-face card-front">
               <span class="card-chinese">{{ currentCard.chinese }}</span>
-              <span v-if="showPinyin" class="card-pinyin-hint">Tap to reveal</span>
-              <span v-else class="card-pinyin-hint">Tap to reveal</span>
+              <span class="card-pinyin-hint">Tap to flip</span>
             </div>
             <div class="card-face card-back">
               <button v-if="hasTTS" class="speak-btn" @click.stop="speak(currentCard.chinese)">🔊</button>

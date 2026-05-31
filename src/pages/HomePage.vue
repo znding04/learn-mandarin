@@ -7,8 +7,14 @@ const router = useRouter()
 const { state, getStreak } = useProgress()
 
 const DAILY_GOAL = 50
-const xpToday = computed(() => state.xp % DAILY_GOAL)
-const xpRemaining = computed(() => DAILY_GOAL - xpToday.value)
+// Track XP earned today separately (not modulo of total XP)
+const todayStr = () => new Date().toISOString().slice(0, 10)
+const xpToday = computed(() => {
+  const lastDate = localStorage.getItem('mandarin-xp-date')
+  if (lastDate !== todayStr()) return 0
+  return parseInt(localStorage.getItem('mandarin-xp-today') || '0', 10)
+})
+const xpRemaining = computed(() => Math.max(DAILY_GOAL - xpToday.value, 0))
 const goalPercent = computed(() => Math.min((xpToday.value / DAILY_GOAL) * 100, 100))
 const goalReached = computed(() => xpToday.value >= DAILY_GOAL)
 </script>

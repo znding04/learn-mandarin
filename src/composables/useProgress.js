@@ -32,6 +32,16 @@ export function useProgress() {
 
   function addXP(amount) {
     state.xp += amount
+    // Track daily XP for the goal bar
+    const today = todayStr()
+    const storedDate = localStorage.getItem('mandarin-xp-date')
+    const storedTodayXP = parseInt(localStorage.getItem('mandarin-xp-today') || '0', 10)
+    if (storedDate === today) {
+      localStorage.setItem('mandarin-xp-today', storedTodayXP + amount)
+    } else {
+      localStorage.setItem('mandarin-xp-date', today)
+      localStorage.setItem('mandarin-xp-today', amount)
+    }
     saveState(state)
   }
 
