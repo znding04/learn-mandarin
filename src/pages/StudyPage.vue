@@ -37,8 +37,10 @@ onMounted(async () => {
     cards.value = getCardsByLesson(lessonId.value, allVocab.value)
   }
 
-  speechSynthesis.onvoiceschanged = () => {
-    hasTTS.value = 'speechSynthesis' in window
+  if ('speechSynthesis' in window) {
+    speechSynthesis.onvoiceschanged = () => {
+      hasTTS.value = 'speechSynthesis' in window
+    }
   }
 })
 
