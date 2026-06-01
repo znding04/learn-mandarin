@@ -103,10 +103,6 @@ function openLesson(lesson) {
   color: var(--color-gold);
 }
 
-.lesson-card {
-  overflow-wrap: break-word;
-}
-
 .lesson-list {
   display: flex;
   flex-direction: column;
