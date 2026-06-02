@@ -2,60 +2,52 @@
 
 ## Current Status
 
-**Last Updated:** 2026-05-31
+**Last Updated:** 2026-06-02
 
-### What's Built (Phases 1-3 Complete)
+### What's Built (Phases 1-3 + Review Page Complete)
 - Vue 3 + Vite + Cloudflare Pages setup
 - Landing page with hero, XP display, daily goal progress bar, streak counter
-- Lessons browser (15 HSK 1 lessons with ~120 vocab words)
+- Lessons browser (15 HSK 1 lessons with ~150 vocab words)
 - Flashcard study page with 3D flip animation
 - SM-2 spaced repetition system (localStorage-based)
 - Web Speech API TTS pronunciation (Chinese voice)
 - Gamification: XP awards, streak tracking, lesson completion badges
 - Pinyin toggle on/off
 - Heritage speaker banner (skip to Level 3+)
-- GitHub Actions auto-deploy workflow
+- **NEW: Review Due page** (`/review`) - shows all cards due across all HSK levels
+- **NEW: HSK 2 vocabulary** (80 words, lessons 16-23)
+- **NEW: Home page review banner** - shows due card count on home page
+- GitHub Actions auto-deploy workflow (requires secrets - see SECRETS_SETUP.md)
+- TEST_CHECKLIST.md for manual QA
 
 ### Bug Fixes (2026-05-31)
 - **Fixed duplicate XP**: `completeLesson()` in useProgress.js already adds +20 XP; removed duplicate award in StudyPage.vue rate()
 - **Fixed daily goal display**: Now tracks today's XP separately in localStorage (not `totalXP % DAILY_GOAL`)
 - **Fixed pinyin hint**: Card front now shows "Tap to flip" (was redundant v-if/v-else that both showed "Tap to reveal")
 
+### v1 Remaining Features
+- Heritage placement test (20 Q, adaptive)
+- User profiles (name, age, avatar)
+- Achievement badges UI
+- Tone drill mini-game
+- Parent dashboard
+- HSK 3 vocabulary
+
 ## Deployment Status
 
-### GitHub Actions Deploy: **FAILING**
-Error: `Input required and not supplied: apiToken`
-- `CLOUDFLARE_API_TOKEN` secret is **not set** in GitHub repo
-- `CLOUDFLARE_ACCOUNT_ID` secret is **not set** in GitHub repo
+### GitHub Actions Deploy: BLOCKED - requires manual secrets setup
+See **SECRETS_SETUP.md** for step-by-step instructions. Summary:
+1. Create Cloudflare API Token (Account - Cloudflare Pages - Edit)
+2. Get Cloudflare Account ID from dashboard URL
+3. Add both as GitHub repo secrets: `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID`
+4. Push any commit to trigger deploy
 
-### To Enable Auto-Deploy
-Follow DEPLOY.md setup steps:
-
-1. **Create Cloudflare API Token**
-   - Go to: https://dash.cloudflare.com/profile/api-tokens
-   - Click "Create Token" → "Create Custom Token"
-   - Name: `learn-mandarin-deploy`
-   - Permissions: Account → Cloudflare Pages → Edit
-   - Account Resources: Select your account
-   - Copy the token value
-
-2. **Get Your Account ID**
-   - Visible in Cloudflare dashboard URL: `dash.cloudflare.com/<ACCOUNT_ID>/...`
-   - Or on Workers & Pages overview page
-
-3. **Add GitHub Secrets**
-   - Go to: https://github.com/znding04/learn-mandarin/settings/secrets-and-variables/actions
-   - Add `CLOUDFLARE_API_TOKEN` = your API token
-   - Add `CLOUDFLARE_ACCOUNT_ID` = your account ID
-
-4. **Trigger Deploy**
-   - Push any commit, or manually trigger from GitHub Actions tab
-   - Expected URL after deploy: `https://learn-mandarin.pages.dev`
+**Expected URL after deploy: `https://learn-mandarin.pages.dev`**
 
 ### Local Deploy (requires credentials)
 ```bash
 cd ~/Work/learn-mandarin
-export CLOUDFLARE_API_TOKEN=your_token_here
+export CLOUDFLARE_API_TOKEN=your_token
 export CLOUDFLARE_ACCOUNT_ID=your_account_id
 bash deploy.sh
 ```
@@ -67,3 +59,8 @@ npm run build
 # Output in dist/
 npx wrangler pages dev dist  # Preview locally
 ```
+
+## Content Stats
+- HSK 1: 147 vocabulary words (15 lessons)
+- HSK 2: 80 vocabulary words (lessons 16-23)
+- Total: 227 vocabulary words
