@@ -20,7 +20,7 @@ export function useSRS() {
   function getDueCards(lessonId, allCards) {
     const now = Date.now()
     return allCards
-      .filter((c) => c.lessonId === lessonId)
+      .filter((c) => lessonId === null || c.lessonId === lessonId)
       .filter((c) => {
         const srs = state.cards[c.id]
         if (!srs) return true // never reviewed = due

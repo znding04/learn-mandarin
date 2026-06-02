@@ -1,10 +1,12 @@
 <script setup>
-import { computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useProgress } from '../composables/useProgress.js'
+import { useSRS } from '../composables/useSRS.js'
 
 const router = useRouter()
 const { state, getStreak } = useProgress()
+const { getDueCards } = useSRS()
 
 const DAILY_GOAL = 50
 // Track XP earned today separately (not modulo of total XP)
@@ -17,6 +19,17 @@ const xpToday = computed(() => {
 const xpRemaining = computed(() => Math.max(DAILY_GOAL - xpToday.value, 0))
 const goalPercent = computed(() => Math.min((xpToday.value / DAILY_GOAL) * 100, 100))
 const goalReached = computed(() => xpToday.value >= DAILY_GOAL)
+const dueCount = ref(0)
+
+onMounted(async () => {
+  const [hsk1, hsk2] = await Promise.all([
+    fetch('/content/hsk1-vocab.json').then(r => r.json()),
+    fetch('/content/hsk2-vocab.json').then(r => r.json()).catch(() => []),
+  ])
+  const allVocab = [...hsk1, ...hsk2]
+  const due = getDueCards(null, allVocab)
+  dueCount.value = due.length
+})
 </script>
 
 <template>
@@ -42,6 +55,9 @@ const goalReached = computed(() => xpToday.value >= DAILY_GOAL)
       <button class="hero-btn" @click="router.push('/lessons')">
         Continue Learning
       </button>
+      <div v-if="dueCount > 0" class="review-banner" @click="router.push('/review')">
+        📚 {{ dueCount }} card{{ dueCount === 1 ? '' : 's' }} due for review
+      </div>
     </div>
   </div>
 </template>
@@ -147,5 +163,21 @@ const goalReached = computed(() => xpToday.value >= DAILY_GOAL)
   .hero-tagline {
     font-size: 1.1rem;
   }
+}
+
+.review-banner {
+  margin-top: 16px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.review-banner:hover {
+  background: rgba(255, 255, 255, 0.25);
 }
 </style>
