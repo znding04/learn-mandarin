@@ -3,10 +3,12 @@ import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useProgress } from '../composables/useProgress.js'
 import { useSRS } from '../composables/useSRS.js'
+import { useAchievements } from '../composables/useAchievements.js'
 
 const router = useRouter()
 const { state, getStreak } = useProgress()
 const { getDueCards } = useSRS()
+const { checkNewAchievements } = useAchievements()
 
 const DAILY_GOAL = 50
 // Track XP earned today separately (not modulo of total XP)
@@ -20,6 +22,7 @@ const xpRemaining = computed(() => Math.max(DAILY_GOAL - xpToday.value, 0))
 const goalPercent = computed(() => Math.min((xpToday.value / DAILY_GOAL) * 100, 100))
 const goalReached = computed(() => xpToday.value >= DAILY_GOAL)
 const dueCount = ref(0)
+const toast = ref(null)
 
 onMounted(async () => {
   const [hsk1, hsk2] = await Promise.all([
@@ -29,6 +32,14 @@ onMounted(async () => {
   const allVocab = [...hsk1, ...hsk2]
   const due = getDueCards(null, allVocab)
   dueCount.value = due.length
+
+  // Check for new achievements
+  const newBadges = checkNewAchievements(state)
+  if (newBadges.length > 0) {
+    const badge = newBadges[0]
+    toast.value = `${badge.icon} ${badge.label} — You earned a new badge!`
+    setTimeout(() => { toast.value = null }, 3500)
+  }
 })
 </script>
 
@@ -59,6 +70,9 @@ onMounted(async () => {
         📚 {{ dueCount }} card{{ dueCount === 1 ? '' : 's' }} due for review
       </div>
     </div>
+    <transition name="toast">
+      <div v-if="toast" class="achievement-toast">{{ toast }}</div>
+    </transition>
   </div>
 </template>
 
@@ -179,5 +193,40 @@ onMounted(async () => {
 
 .review-banner:hover {
   background: rgba(255, 255, 255, 0.25);
+}
+
+.achievement-toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-card);
+  color: var(--color-text);
+  padding: 14px 24px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+  font-size: 1rem;
+  z-index: 50;
+  white-space: nowrap;
+}
+
+.toast-enter-active {
+  animation: slideUp 0.4s ease;
+}
+
+.toast-leave-active {
+  animation: slideUp 0.3s ease reverse;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 </style>

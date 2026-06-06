@@ -1,15 +1,11 @@
 <script setup>
-import { computed } from 'vue'
+import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import NavBar from '../components/NavBar.vue'
 import { useProgress } from '../composables/useProgress.js'
 
 const router = useRouter()
 const { state, getStreak, isLessonComplete } = useProgress()
-
-const lessonsCompleted = computed(() =>
-  lessons.filter(l => isLessonComplete(l.id)).length
-)
 
 const lessons = [
   { id: 1, title: 'Greetings & Basics', wordCount: 10 },
@@ -29,6 +25,25 @@ const lessons = [
   { id: 15, title: 'Time & Weather II', wordCount: 11 },
 ]
 
+const hsk2Lessons = [
+  { id: 16, title: 'School & Academics', wordCount: 10 },
+  { id: 17, title: 'Education & Growth', wordCount: 10 },
+  { id: 18, title: 'Giving & Exchanges', wordCount: 10 },
+  { id: 19, title: 'Progress & Development', wordCount: 10 },
+  { id: 20, title: 'Emotions & Cognition', wordCount: 10 },
+  { id: 21, title: 'Communication', wordCount: 10 },
+  { id: 22, title: 'Modal Verbs & Adverbs', wordCount: 10 },
+  { id: 23, title: 'Knowledge & Culture', wordCount: 10 },
+]
+
+const hsk2Expanded = ref(false)
+
+const lessonsCompleted = computed(() =>
+  [...lessons, ...hsk2Lessons].filter(l => isLessonComplete(l.id)).length
+)
+
+const totalLessons = computed(() => lessons.length + hsk2Lessons.length)
+
 function openLesson(lesson) {
   router.push(`/study/${lesson.id}`)
 }
@@ -45,11 +60,37 @@ function openLesson(lesson) {
       <div class="stats-bar">
         <span class="stat-item">⭐ {{ state.xp }} XP</span>
         <span class="stat-item">🔥 {{ getStreak() }} streak</span>
-        <span class="stat-item">{{ lessonsCompleted }} / {{ lessons.length }} lessons</span>
+        <span class="stat-item">{{ lessonsCompleted }} / {{ totalLessons }} lessons</span>
       </div>
       <div class="lesson-list">
         <div
           v-for="lesson in lessons"
+          :key="lesson.id"
+          class="lesson-card"
+          @click="openLesson(lesson)"
+        >
+          <div class="lesson-info">
+            <span class="lesson-number">Lesson {{ lesson.id }}</span>
+            <h3 class="lesson-title">{{ lesson.title }}</h3>
+            <span class="lesson-words">{{ lesson.wordCount }} words</span>
+          </div>
+          <span v-if="isLessonComplete(lesson.id)" class="lesson-badge badge-complete">
+            ✓ Complete
+          </span>
+          <span v-else class="lesson-badge badge-ready">
+            Start
+          </span>
+        </div>
+      </div>
+
+      <div class="level-header hsk2-header" @click="hsk2Expanded = !hsk2Expanded">
+        <h1>HSK 2 <span class="expand-icon">{{ hsk2Expanded ? '▾' : '▸' }}</span></h1>
+        <p>Intermediate — 80 more words</p>
+      </div>
+
+      <div v-if="hsk2Expanded" class="lesson-list">
+        <div
+          v-for="lesson in hsk2Lessons"
           :key="lesson.id"
           class="lesson-card"
           @click="openLesson(lesson)"
@@ -161,5 +202,20 @@ function openLesson(lesson) {
 .badge-complete {
   background: #e8f8f5;
   color: #27ae60;
+}
+
+.hsk2-header {
+  cursor: pointer;
+  user-select: none;
+  padding-top: 24px;
+}
+
+.hsk2-header:hover {
+  opacity: 0.85;
+}
+
+.expand-icon {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
 }
 </style>

@@ -27,8 +27,11 @@ const currentCard = computed(() => cards.value[currentIndex.value] || null)
 const progress = computed(() => `Card ${currentIndex.value + 1} of ${cards.value.length}`)
 
 onMounted(async () => {
-  const res = await fetch('/content/hsk1-vocab.json')
-  allVocab.value = await res.json()
+  const [hsk1, hsk2] = await Promise.all([
+    fetch('/content/hsk1-vocab.json').then(r => r.json()),
+    fetch('/content/hsk2-vocab.json').then(r => r.json()).catch(() => []),
+  ])
+  allVocab.value = [...hsk1, ...hsk2]
 
   const due = getDueCards(lessonId.value, allVocab.value)
   if (due.length > 0) {

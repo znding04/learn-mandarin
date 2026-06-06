@@ -31,6 +31,11 @@ const { state, getStreak } = useProgress()
         class="navbar-link"
         :class="{ active: route.path === '/lessons' }"
       >Lessons</router-link>
+      <router-link
+        v-if="!showBack && route.path !== '/profile'"
+        to="/profile"
+        class="navbar-profile"
+      >👤</router-link>
     </div>
   </nav>
 </template>
@@ -86,5 +91,22 @@ const { state, getStreak } = useProgress()
 .navbar-link.active {
   background: rgba(255, 255, 255, 0.35);
   font-weight: 700;
+}
+
+.navbar-profile {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 50%;
+  font-size: 1rem;
+  min-height: 36px;
+  min-width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-profile:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 </style>
