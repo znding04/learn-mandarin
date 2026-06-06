@@ -55,6 +55,9 @@ function rate(quality) {
     currentIndex.value++
     isFlipped.value = false
   } else {
+    // Track review session for achievements
+    const sessions = parseInt(localStorage.getItem('mandarin-review-sessions') || '0', 10) + 1
+    localStorage.setItem('mandarin-review-sessions', sessions.toString())
     completeLesson(0)
     xpEarned.value += 20
     sessionComplete.value = true
