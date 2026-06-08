@@ -2,9 +2,9 @@
 
 ## Current Status
 
-**Last Updated:** 2026-06-02
+**Last Updated:** 2026-06-08
 
-### What's Built (Phases 1-3 + Review Page Complete)
+### What's Built (Phases 1-3 + Review Page Complete) — READY FOR DEPLOY ✓
 - Vue 3 + Vite + Cloudflare Pages setup
 - Landing page with hero, XP display, daily goal progress bar, streak counter
 - Lessons browser (15 HSK 1 lessons with ~150 vocab words)
@@ -35,12 +35,17 @@
 
 ## Deployment Status
 
-### GitHub Actions Deploy: BLOCKED - requires manual secrets setup
-See **SECRETS_SETUP.md** for step-by-step instructions. Summary:
-1. Create Cloudflare API Token (Account - Cloudflare Pages - Edit)
-2. Get Cloudflare Account ID from dashboard URL
-3. Add both as GitHub repo secrets: `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID`
-4. Push any commit to trigger deploy
+### ⚠️ ACTION REQUIRED: GitHub Secrets Not Set
+The GitHub Actions deploy workflow is configured but **failing** because secrets are not set.
+Run #22 (2026-06-06) failed instantly at "Deploy to Cloudflare Pages" step — missing credentials.
+
+**To deploy, you must add GitHub secrets:**
+1. Create a Cloudflare API Token (Account → Cloudflare Pages → Edit permission)
+2. Get your Cloudflare Account ID from the dashboard URL
+3. Add as GitHub repo secrets: `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID`
+   → https://github.com/znding04/learn-mandarin/settings/secrets-and-variables/actions
+
+See **SECRETS_SETUP.md** for step-by-step instructions.
 
 **Expected URL after deploy: `https://learn-mandarin.pages.dev`**
 

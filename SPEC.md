@@ -1,6 +1,6 @@
 # Learn Mandarin — Free Open-Source Chinese Learning for ABC Kids
 
-> **Status:** BUILD COMPLETE — GitHub Actions deploy workflow ready. Requires manual setup of CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID secrets per DEPLOY.md. Deploy script improved (2026-05-26) — now removes all Workers/Vite plugin keys from dist/wrangler.json and actually runs the pages deploy command.
+> **Status:** BUILD COMPLETE — All phases done. GitHub Actions deploy BLOCKED — no Cloudflare secrets set. See PROGRESS.md Section "Deployment Status" for setup instructions.
 
 > **Build Decision:** All 7 days of research complete. No hard blockers found. Proceed to implementation.
 
