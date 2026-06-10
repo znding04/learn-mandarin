@@ -4,7 +4,7 @@
 
 **Last Updated:** 2026-06-09
 
-### What's Built (Phases 1-3 + Review Page Complete) — READY FOR DEPLOY ✓
+### What's Built (Phases 1-3 + Tone Drill + Parent Dashboard) — READY FOR DEPLOY ✓
 - Vue 3 + Vite + Cloudflare Pages setup
 - Landing page with hero, XP display, daily goal progress bar, streak counter
 - Lessons browser (15 HSK 1 lessons with ~150 vocab words)
@@ -17,6 +17,8 @@
 - **NEW: Review Due page** (`/review`) - shows all cards due across all HSK levels
 - **NEW: HSK 2 vocabulary** (80 words, lessons 16-23)
 - **NEW: Home page review banner** - shows due card count on home page
+- **NEW: Tone Drill mini-game** (`/tone-drill`) — hear a word, select the tone (4 tones, 10 per session, +5 XP)
+- **NEW: Parent Dashboard** (`/parent`) — XP, streak, lesson progress, vocabulary stats, achievements, recommendations
 - GitHub Actions auto-deploy workflow (requires secrets - see SECRETS_SETUP.md)
 - TEST_CHECKLIST.md for manual QA
 
@@ -26,12 +28,8 @@
 - **Fixed pinyin hint**: Card front now shows "Tap to flip" (was redundant v-if/v-else that both showed "Tap to reveal")
 
 ### v1 Remaining Features
-- Heritage placement test (20 Q, adaptive)
-- User profiles (name, age, avatar)
-- Achievement badges UI
-- Tone drill mini-game
-- Parent dashboard
-- HSK 3 vocabulary
+- HSK 3 vocabulary (content)
+- Achievement badges UI page (badges are tracked in useAchievements.js but no dedicated display page yet)
 
 ## Deployment Status
 
