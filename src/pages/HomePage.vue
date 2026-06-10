@@ -69,6 +69,12 @@ onMounted(async () => {
       <div v-if="dueCount > 0" class="review-banner" @click="router.push('/review')">
         📚 {{ dueCount }} card{{ dueCount === 1 ? '' : 's' }} due for review
       </div>
+
+      <div class="hero-links">
+        <a href="https://ljding.app" target="_blank" rel="noopener">View my portfolio → ljding.app</a>
+        <span class="link-sep">|</span>
+        <a href="https://github.com/znding04/learn-mandarin" target="_blank" rel="noopener">View source on GitHub → github.com/znding04/learn-mandarin</a>
+      </div>
     </div>
     <transition name="toast">
       <div v-if="toast" class="achievement-toast">{{ toast }}</div>
@@ -217,6 +223,29 @@ onMounted(async () => {
 
 .toast-leave-active {
   animation: slideUp 0.3s ease reverse;
+}
+
+.hero-links {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.hero-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.hero-links a:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.link-sep {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 @keyframes slideUp {
