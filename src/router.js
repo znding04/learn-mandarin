@@ -5,6 +5,8 @@ import StudyPage from './pages/StudyPage.vue'
 import ReviewPage from './pages/ReviewPage.vue'
 import PlacementPage from './pages/PlacementPage.vue'
 import ProfilePage from './pages/ProfilePage.vue'
+import ToneDrillPage from './pages/ToneDrillPage.vue'
+import ParentDashboard from './pages/ParentDashboard.vue'
 import NotFound from './pages/NotFound.vue'
 
 const routes = [
@@ -14,6 +16,8 @@ const routes = [
   { path: '/review', component: ReviewPage },
   { path: '/placement', component: PlacementPage },
   { path: '/profile', component: ProfilePage },
+  { path: '/tone-drill', component: ToneDrillPage },
+  { path: '/parent', component: ParentDashboard },
   { path: '/:pathMatch(.*)*', component: NotFound },
 ]
 
