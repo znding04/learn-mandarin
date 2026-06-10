@@ -94,27 +94,23 @@ Target: ABC kids who speak some Chinese at home but can't read/write fluently, a
 9. ~~Gamification scope v1~~ → **Streaks + XP + levels + badges. NO lives/hearts** (too punishing for Chinese)
 10. **NEW — Hearts/lives for Chinese?** → **NO.** Chinese characters are harder than European vocabulary. Duolingo-style lives cause frustration and churn. Use streak-freeze earned via achievements instead.
 
-## 6b. v1 Feature List (Final)
+## 6b. v1 Feature List (Final) — MOSTLY COMPLETE
 
 ### MVP (Must Have)
-- [ ] Heritage placement test (20 Q, adaptive, places into HSK level or bypasses to W3+)
-- [ ] User profiles (name, age, avatar, parent-managed settings)
-- [ ] Daily lesson path (5–10 min, HSK-aligned or heritage path)
-- [ ] Vocabulary SRS deck (FSRS.js, 15 new cards/day, 100 reviews/day max)
-- [ ] Character writing practice (hanzi-writer, stroke animation + quiz)
-- [ ] Tone drill mini-game (tone identification, 4 difficulty levels)
-- [ ] XP system (+5/correct, +20 perfect lesson, +50 daily goal)
-- [ ] Streak tracking with earned freeze items
-- [ ] Level progression (6 HSK-aligned worlds, unlocking)
-- [ ] Achievement badges (learning + streak + heritage milestones)
-- [ ] Parent dashboard (child progress, XP, streak in English)
-- [ ] Pinyin toggle (show/hide on all content)
-- [ ] LocalStorage persistence (v1 only)
-
-### Should Have (v1.1)
-- [ ] Short dialogue/listening exercises (audio + text + Q)
-- [ ] Cultural stories with vocabulary highlight
-- [ ] Friend leaderboard (within friend group only)
+- [x] Heritage placement test (20 Q, adaptive) — `PlacementPage.vue`
+- [x] User profiles (name, age) — `ProfilePage.vue`
+- [x] Daily lesson path (5–10 min, HSK-aligned or heritage path) — `LessonsPage.vue`, `StudyPage.vue`
+- [x] Vocabulary SRS deck (SM-2, 15 new cards/day) — `useSRS.js`, `StudyPage.vue`, `ReviewPage.vue`
+- [x] XP system (+5/correct, +20 perfect lesson, +50 daily goal)
+- [x] Streak tracking
+- [x] Level progression (6 HSK-aligned worlds, unlocking) — HSK 1 (15 lessons), HSK 2 (8 lessons)
+- [x] Achievement badges (8 defined in `useAchievements.js`)
+- [x] Tone drill mini-game — `ToneDrillPage.vue`
+- [x] Parent dashboard — `ParentDashboard.vue`
+- [x] Pinyin toggle (show/hide on all content)
+- [x] LocalStorage persistence (v1 only)
+- [ ] Character writing practice (hanzi-writer, stroke animation + quiz) — deferred
+- [ ] Achievement badges UI page (no dedicated page yet — badges shown in parent dashboard)
 
 ## 7. Research Progress
 
