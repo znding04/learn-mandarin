@@ -2,7 +2,7 @@
 
 ## Current Status
 
-**Last Updated:** 2026-06-09
+**Last Updated:** 2026-06-23
 
 ### What's Built (Phases 1-3 + Tone Drill + Parent Dashboard) — READY FOR DEPLOY ✓
 - Vue 3 + Vite + Cloudflare Pages setup
@@ -26,6 +26,11 @@
 - **Fixed duplicate XP**: `completeLesson()` in useProgress.js already adds +20 XP; removed duplicate award in StudyPage.vue rate()
 - **Fixed daily goal display**: Now tracks today's XP separately in localStorage (not `totalXP % DAILY_GOAL`)
 - **Fixed pinyin hint**: Card front now shows "Tap to flip" (was redundant v-if/v-else that both showed "Tap to reveal")
+
+### ⚠️ DEPLOY BLOCKED: GitHub Secrets Not Configured
+GitHub Actions workflow runs but fails at deploy step because `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` secrets are not set.
+**Last run:** #28039240096 (2026-06-23) — failed with `Input required and not supplied: apiToken`
+See **DEPLOY.md** / **SECRETS_SETUP.md** for setup instructions.
 
 ### v1 Remaining Features
 - HSK 3 vocabulary (content)
