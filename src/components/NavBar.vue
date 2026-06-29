@@ -36,6 +36,12 @@ const { state, getStreak } = useProgress()
         to="/profile"
         class="navbar-profile"
       >👤</router-link>
+      <router-link
+        v-if="!showBack && route.path !== '/achievements'"
+        to="/achievements"
+        class="navbar-link"
+        :class="{ active: route.path === '/achievements' }"
+      >🏆</router-link>
     </div>
   </nav>
 </template>
